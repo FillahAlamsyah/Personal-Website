@@ -1,16 +1,106 @@
 ---
-title: "Demo Post 2"
+title: "Supervised Learning dan Unsupervised Learning: Panduan Lengkap"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 pubDate: "Sep 11 2022"
 heroImage: "/post_img.webp"
 ---
+# Supervised Learning dan Unsupervised Learning: Panduan Lengkap
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Dalam dunia Machine Learning, ada berbagai metode dan algoritma yang digunakan untuk membangun model dan memecahkan berbagai jenis masalah. Dua kategori utama dari teknik Machine Learning adalah **Supervised Learning** dan **Unsupervised Learning**. Artikel ini akan membahas keduanya, termasuk konsep dasar, perbedaan utama, serta contoh aplikasi nyata.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+## 1. Supervised Learning
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+### Apa itu Supervised Learning?
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+**Supervised Learning** adalah metode Machine Learning di mana model dilatih menggunakan data yang sudah diberi label. Tujuan dari Supervised Learning adalah untuk mempelajari pola dari data latih dan menerapkannya pada data baru untuk membuat prediksi atau keputusan.
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+### **Contoh Kasus Supervised Learning**
+
+- **Klasifikasi:** Menentukan apakah email adalah spam atau bukan.
+- **Regresi:** Memprediksi harga rumah berdasarkan fitur seperti ukuran, lokasi, dan jumlah kamar.
+
+### **Algoritma Supervised Learning**
+
+Berikut adalah beberapa algoritma populer dalam Supervised Learning:
+
+- **Regresi Linier**: Digunakan untuk memprediksi nilai kontinu berdasarkan hubungan linier antara fitur dan target.
+- **Klasifikasi Naive Bayes**: Digunakan untuk tugas klasifikasi dengan asumsi independensi fitur.
+- **Jaringan Syaraf Tiruan**: Digunakan untuk tugas yang lebih kompleks, seperti pengenalan gambar atau suara.
+
+### **Bagaimana Supervised Learning Bekerja**
+
+1. **Pengumpulan Data:** Kumpulkan data yang sudah diberi label.
+2. **Pembersihan Data:** Bersihkan data untuk memastikan kualitasnya.
+3. **Pemecahan Data:** Bagi data menjadi data latih dan data uji.
+4. **Pelatihan Model:** Gunakan data latih untuk mengajarkan model.
+5. **Evaluasi Model:** Uji model dengan data uji untuk mengukur kinerjanya.
+6. **Prediksi:** Gunakan model untuk membuat prediksi pada data baru.
+
+### **Contoh Kode Supervised Learning**
+
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+# Misalkan X adalah fitur dan y adalah target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+print(f"Mean Squared Error: {mean_squared_error(y_test, predictions)}")
+```
+
+## 2. Unsupervised Learning
+### Apa itu Unsupervised Learning?
+Unsupervised Learning adalah metode Machine Learning di mana model dilatih menggunakan data yang tidak diberi label. Tujuan dari Unsupervised Learning adalah untuk menemukan pola, struktur, atau informasi tersembunyi dalam data.
+
+### Contoh Kasus Unsupervised Learning
+- Klasterisasi: Mengelompokkan pelanggan berdasarkan kebiasaan belanja mereka.
+- Reduksi Dimensi: Mengurangi jumlah fitur dalam data sambil menjaga informasi yang relevan.
+
+### Algoritma Unsupervised Learning
+Berikut adalah beberapa algoritma populer dalam Unsupervised Learning:
+- K-Means Clustering: Digunakan untuk mengelompokkan data ke dalam sejumlah kelompok yang telah ditentukan.
+- Principal Component Analysis (PCA): Digunakan untuk mengurangi dimensi data dan menjaga variansi maksimum.
+- Algoritma Apriori: Digunakan untuk menemukan aturan asosiasi dalam data.
+
+### Bagaimana Unsupervised Learning Bekerja
+1. Pengumpulan Data: Kumpulkan data yang belum diberi label.
+2. Pembersihan Data: Bersihkan data untuk memastikan kualitasnya.
+3. Eksplorasi Data: Analisis data untuk memahami struktur atau pola yang ada.
+4. Pelatihan Model: Terapkan algoritma untuk menemukan pola atau struktur dalam data.
+5. Evaluasi Model: Analisis hasil untuk memahami pola atau insight yang ditemukan.
+
+Contoh Kode Unsupervised Learning
+```python
+from sklearn.cluster import KMeans
+from sklearn.decomposition import PCA
+
+# Misalkan X adalah fitur
+pca = PCA(n_components=2)
+X_reduced = pca.fit_transform(X)
+
+kmeans = KMeans(n_clusters=3)
+clusters = kmeans.fit_predict(X_reduced)
+
+print(f"Cluster Centers: {kmeans.cluster_centers_}")
+```
+## Perbedaan Antara Supervised Learning dan Unsupervised Learning
+
+| **Supervised Learning**                                      | **Unsupervised Learning**                                   |
+|--------------------------------------------------------------|-------------------------------------------------------------|
+| Data dilabeli                                               | Data tidak dilabeli                                       |
+| Tujuan: Membuat prediksi atau klasifikasi                  | Tujuan: Menemukan pola atau struktur                       |
+| Contoh algoritma: Regresi, Klasifikasi                       | Contoh algoritma: Klasterisasi, PCA                         |
+| Evaluasi berdasarkan akurasi atau kesalahan prediksi       | Evaluasi berdasarkan kualitas pola atau struktur           |
+
+## Kesimpulan
+Supervised Learning dan Unsupervised Learning adalah dua pendekatan utama dalam Machine Learning dengan aplikasi yang berbeda. Supervised Learning memerlukan data berlabel dan digunakan untuk prediksi dan klasifikasi, sementara Unsupervised Learning tidak memerlukan label dan digunakan untuk menemukan pola dan struktur dalam data. Memahami perbedaan ini membantu dalam memilih teknik yang tepat untuk berbagai masalah Machine Learning.
+
+## Referensi
+- Supervised Learning vs Unsupervised Learning - Towards Data Science
+- A Beginner’s Guide to Supervised Learning - Analytics Vidhya
+- A Comprehensive Guide to Unsupervised Learning - DataCamp
